@@ -22,19 +22,19 @@ class MoneyTransferPositiveTest {
         var dashboardPage = verificationPage.validVerify(verificationCode);
     }
 
-//    @AfterEach
-//    public void setUpClose() {
-//        open("http://localhost:9999");
-//        var loginPage = new LoginPage();
-//        var authInfo = DataHelper.getAuthInfo();
-//        var verificationPage = loginPage.validLogin(authInfo);
-//        var verificationCode = DataHelper.getVerificationCodeFor(authInfo);
-//        var dashboardPage = verificationPage.validVerify(verificationCode);
-//        int card1Balance = dashboardPage.getCardBalance(1);
-//        var transferPage = dashboardPage.choosingCardForTransfer(1);
-//        int sumOfTransfer = 10000-card1Balance;
-//        transferPage.transferToCard(1, sumOfTransfer);
-//    }
+    @AfterEach
+    public void setUpClose() {
+        open("http://localhost:9999");
+        var loginPage = new LoginPage();
+        var authInfo = DataHelper.getAuthInfo();
+        var verificationPage = loginPage.validLogin(authInfo);
+        var verificationCode = DataHelper.getVerificationCodeFor(authInfo);
+        var dashboardPage = verificationPage.validVerify(verificationCode);
+        int card1Balance = dashboardPage.getCardBalance(1);
+        var transferPage = dashboardPage.choosingCardForTransfer(1);
+        int sumOfTransfer = 10000-card1Balance;
+        transferPage.transferToCard(1, sumOfTransfer);
+    }
 
     @Test
     void shouldTransferMoneyToFirstCard() {
