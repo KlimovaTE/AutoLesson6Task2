@@ -1,11 +1,9 @@
 package page;
 
 import com.codeborne.selenide.ElementsCollection;
-import com.codeborne.selenide.Selectors;
 import com.codeborne.selenide.SelenideElement;
 import lombok.val;
 
-import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selenide.*;
 
 
