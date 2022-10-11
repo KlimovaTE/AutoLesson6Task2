@@ -5,6 +5,7 @@ stack: jdk 11  # версия JDK
 branches:
   only:
     - main  # ветка git
+    - task2
 
 build: off  # будем использовать свой скрипт сборки
 
