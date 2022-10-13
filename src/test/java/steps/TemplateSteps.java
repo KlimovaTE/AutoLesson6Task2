@@ -30,10 +30,10 @@ public class TemplateSteps {
         dashboardPage = verificationPage.validVerify(DataHelper.getVerificationCodeFor(DataHelper.getAuthInfo()));
     }
 
-    @Когда("пользователь переводит {int} рублей с карты с номером 5559 0000 0000 0002 на свою {int} карту с главной страницы")
-    public void makeTransfer(int transfer, int indexOfCad) {
-        var transferPage = dashboardPage.choosingCardForTransfer(1);
-        transferPage.transferToCard(indexOfCad, transfer);
+    @Когда("пользователь переводит {int} рублей с карты с номером {string} на свою {int} карту с главной страницы")
+    public void makeTransfer(int transfer, String numberCard, int indexOfCad) {
+        var transferPage = dashboardPage.choosingCardForTransfer(indexOfCad);
+        transferPage.transferToCard(numberCard, transfer);
     }
 
     @Тогда("баланс его {int} карты из списка на главной странице должен стать {int} рублей")
